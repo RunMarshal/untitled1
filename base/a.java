@@ -15,7 +15,7 @@ public class a
         System.out.println("12345\r456");
 //        12345
 //          45
-        System.out.println("12345\r\n456");
+        System.out.println("12345\r\n4");
         //E:\PyCharm Community Edition 2022.2.3\pydemo\venv\Scripts\python.exe
     }
 }
