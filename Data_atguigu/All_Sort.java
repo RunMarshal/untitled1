@@ -219,9 +219,45 @@ class Sort{
 
     }
 
+    public static void heapSort(int[] arr) {
+        System.out.println("堆排序!!");
+
+        int j;
+        for(j = arr.length / 2 - 1; j >= 0; --j) {
+            adjustHeap(arr, j, arr.length);
+        }
+
+        for(j = arr.length - 1; j > 0; --j) {
+            int temp = arr[j];
+            arr[j] = arr[0];
+            arr[0] = temp;
+            adjustHeap(arr, 0, j);
+        }
+
+    }
+    public static void adjustHeap(int[] arr, int i, int lenght) {
+        int temp = arr[i];
+
+        for(int k = i * 2 + 1; k < lenght; k = k * 2 + 1) {
+            if (k + 1 < lenght && arr[k] < arr[k + 1]) {
+                ++k;
+            }
+
+            if (arr[k] <= temp) {
+                break;
+            }
+
+            arr[i] = arr[k];
+            i = k;
+        }
+
+        arr[i] = temp;
+    }
+
     public static void Print(int[] arr){
         for(int item : arr){
             System.out.println(item);
         }
     }
+
 }
